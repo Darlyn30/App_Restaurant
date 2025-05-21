@@ -1,0 +1,133 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #1f2937;
+    color: white;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #facc15;
+}
+
+#confirmation {
+    max-width: 600px;
+    margin: 120px auto 60px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#confirmation h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #1f2937;
+}
+
+.selected-payment {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.payment-icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#confirmation p span {
+    font-weight: 600;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+select {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+.expiry-date {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    font-size: 16px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+}
+
+.btn-secondary {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: #d1d5db;
+}
+
+.action-buttons {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confirmación de Pago</title>
+  <link rel="stylesheet" href="./Confirmation.css" />
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo" onclick="backToCart()">← Volver al carrito</div>
+        </nav>
+    </header>
+
+    <section id="confirmation">
+        <h2>Confirmación de Pago</h2>
+
+        <div class="selected-payment">
+            <img id="payment-icon" alt="Método de Pago" class="payment-icon"/>
+            <p>Has seleccionado: <span id="selected-method"></span></p>
+            <p>Producto: <span id="item-name"></span></p>
+            <p>Monto a pagar: $<span id="amount"></span></p>
+        </div>
+
+        <div id="card-payment-form" style="display: none;">
+            <h3>Formulario de Pago con Tarjeta</h3>
+            <form id="payment-form">
+                <label for="card-number">Número de Tarjeta</label>
+                <input type="tel" id="card-number" maxlength="16" required placeholder="1234 5678 9012 3456" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+
+                <label for="card-name">Nombre en la Tarjeta</label>
+                <input type="text" id="card-name" required placeholder="Nombre Completo" />
+
+                <label for="card-expiry-month">Fecha de Expiración</label>
+                <div class="expiry-date">
+                    <select id="card-expiry-month" required>
+                            <option value="" disabled selected>Mes</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                    </select>
+
+                    <select id="card-expiry-year" required>
+                        <option value="" disabled selected>Año</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                    </select>
+                </div>
+
+                <label for="card-cvc">CVC</label>
+                <input type="password" id="card-cvc" maxlength="3" required placeholder="123" />
+
+                <button class="btn-primary">Pagar</button>
+        </form>
+        </div>
+
+        <div class="action-buttons">
+            <button id="confirm-button" type="button" class="btn-primary" onclick="completePurchase()">Confirmar y Pagar</button>
+            <button class="btn-secondary" onclick="goBack()">Cambiar Método de Pago</button>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./Confirmation.js"></script>
+</body>
+</html>

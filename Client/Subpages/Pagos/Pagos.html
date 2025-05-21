@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Seleccionar Método de Pago</title>
+    <link rel="stylesheet" href="./Pagos.css" />
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo" onclick="backToCart()">← Volver al carrito</div>
+    </nav>
+</header>
+
+<main id="payment">
+    <h2>Selecciona tu método de pago</h2>
+
+    <div class="payment-options">
+        <label class="payment-option">
+            <input type="radio" id="credit-debit" name="payment-method" value="credit-debit" required />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="Tarjeta Mastercard" class="payment-icon" />
+            <span>Tarjeta de Crédito o Débito</span>
+        </label>
+
+        <label class="payment-option">
+            <input type="radio" id="paypal" name="payment-method" value="paypal" required />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="payment-icon" />
+            <span>PayPal</span>
+        </label>
+    </div>
+
+    <button type="button" class="btn-primary" onclick="goToConfirmationPage()">Continuar</button>
+</main>
+
+<script src="./Pagos.js"></script>
+</body>
+</html>
