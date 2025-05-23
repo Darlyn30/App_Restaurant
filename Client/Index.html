@@ -17,47 +17,47 @@
   </div>
 
   <div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="form-box p-5 rounded shadow">
-      <h2 id="formTitle" class="text-center fw-bold mb-3">Iniciar Sesión</h2>
+        <div class="form-box p-5 rounded shadow">
+            <h2 id="formTitle" class="text-center fw-bold mb-3">Iniciar Sesión</h2>
 
-      <form id="authForm" novalidate>
-        <!-- Nombre (solo en registro) -->
-        <div class="mb-3 d-none" id="nameGroup">
-          <input type="text" class="form-control" id="name" placeholder="Nombre completo" />
+            <form id="authForm" novalidate>
+                <!-- Nombre (solo en registro) -->
+                <div class="mb-3 d-none" id="nameGroup">
+                    <input type="text" class="form-control" id="name" placeholder="Nombre completo" />
+                </div>
+
+                <!-- Correo -->
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="Correo electrónico" required />
+                </div>
+
+                <!-- Contraseña -->
+                <div class="mb-3 position-relative">
+                    <input type="password" class="form-control" id="password" placeholder="Contraseña" required />
+                    <i class="bi bi-eye-fill toggle-password" data-target="password"></i>
+                </div>
+
+                <!-- Confirmar contraseña (solo en registro) -->
+                <div class="mb-3 position-relative d-none" id="confirmGroup">
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmar contraseña" />
+                    <i class="bi bi-eye-fill toggle-password" data-target="confirmPassword"></i>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 mb-3" id="submitBtn">Ingresar</button>
+
+                <div class="text-center">
+                    <small id="toggleText">¿No tienes cuenta? <a href="#" id="toggleForm">Crea una aquí</a></small>
+                </div>
+
+                <div class="text-center">
+                    <small id="warningMessage" class="text-danger d-none">El correo invalido, debe ser de google(@gmail.com)</small>
+                </div>
+            </form>
         </div>
-
-        <!-- Correo -->
-        <div class="mb-3">
-          <input type="email" class="form-control" id="email" placeholder="Correo electrónico" required />
-        </div>
-
-        <!-- Contraseña -->
-        <div class="mb-3 position-relative">
-          <input type="password" class="form-control" id="password" placeholder="Contraseña" required />
-          <i class="bi bi-eye-fill toggle-password" data-target="password"></i>
-        </div>
-
-        <!-- Confirmar contraseña (solo en registro) -->
-        <div class="mb-3 position-relative d-none" id="confirmGroup">
-          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmar contraseña" />
-          <i class="bi bi-eye-fill toggle-password" data-target="confirmPassword"></i>
-        </div>
-
-        <button type="submit" class="btn btn-primary w-100 mb-3" id="submitBtn">Ingresar</button>
-
-        <div class="text-center">
-          <small id="toggleText">¿No tienes cuenta? <a href="#" id="toggleForm">Crea una aquí</a></small>
-        </div>
-
-        <div class="text-center">
-          <small id="warningMessage" class="text-danger d-none">El correo invalido, debe ser de google(@gmail.com)</small>
-        </div>
-      </form>
-    </div>
   </div>
 
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="./Index/Main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./Index/Main.js"></script>
 </body>
 </html>
 

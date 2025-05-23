@@ -18,5 +18,6 @@ namespace UberEats.Core.Domain.Entities
         public bool IsActive { get; set; }
 
         public ICollection<Cart> Carts { get; set; } = new List<Cart>();
+        public ICollection<PaymentMethod> PaymentMethods = new List<PaymentMethod>();
     }
 }

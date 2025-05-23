@@ -30,12 +30,6 @@ CREATE TABLE UnverifiedAccounts
 	--NO NECESITO EL HASH AQUI
 )
 
-SELECT * FROM UnverifiedAccounts
-
-DELETE FROM UnverifiedAccounts
-WHERE Email = 'zarcort242@gmail.com'
-
-
 CREATE TABLE Categories
 (
 	Id  INT IDENTITY(1,1) PRIMARY KEY,
@@ -143,37 +137,40 @@ CREATE TABLE CartItems
 
 SELECT * FROM CartItems
 
-DELETE FROM CartItems
-WHERE Id = 2004
+--payment method entity
 
-UPDATE CartItems
-SET ImgUrl  = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQppb6fWNQFq8_FtUkllEyATzWrq6l9ooJJrA&s'
-WHERE Id = 2
-
-CREATE TABLE Payments
+CREATE TABLE PaymentMethods
 (
 	Id INT IDENTITY(1,1) PRIMARY KEY,
+	PaymentName VARCHAR(100),
+	ImgUrl VARCHAR(MAX),
+)
+
+DROP TABLE IF EXISTS OrderItems
+
+--Payment bills
+CREATE TABLE Orders
+(
+	id INT IDENTITY(1,1) PRIMARY KEY,
 	UserId INT,
-	Amount DECIMAL(10,2),
-	Method VARCHAR(100),
-	Status VARCHAR(100),
-	CreatedAt DATETIME DEFAULT GETDATE()
+	TotalAmount DECIMAL(10,2),
+	PaymentMethodId INT,
+	Status VARCHAR(50),
+	CreatedAt DATETIME DEFAULT GETDATE(),
+	FOREIGN KEY(UserId) REFERENCES Users(Id),
+	FOREIGN KEY(PaymentMethodId) REFERENCES PaymentMethods(Id)
 )
 
-ALTER TABLE Payments ADD CardLast4Digits VARCHAR(4)
-
-
-SELECT * FROM Payments
-
-DROP TABLE IF EXISTS Payments
-
---ESTO RECIBE DATOS A TRAVES DE UN TRIGGER QUE CUANDO SALGA DEL CARRITO, SE GUARDE AQUI EN EL HISTORIAL
-CREATE TABLE Historial
+CREATE TABLE OrderItems
 (
 	Id INT IDENTITY(1,1) PRIMARY KEY,
-
+	OrderId INT, -- reference to order
+	ItemId INT, -- references to cartItems
+	Quantity INT,
+	Price DECIMAL(10,2),
+	FOREIGN KEY(OrderId) REFERENCES Orders(Id) ON DELETE CASCADE,
+	FOREIGN KEY(ItemId) REFERENCES CartItems(Id)
 )
-
 
 --para el usuario, uno obtiene el pin, y lo mete en la tabla de cuentas no verificadas
 CREATE TRIGGER GetPIN

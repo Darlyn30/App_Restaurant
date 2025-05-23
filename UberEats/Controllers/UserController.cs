@@ -40,7 +40,6 @@ namespace WebApi.UberEats.Controllers
             return Ok("Usuario creado exitosamente.");
         }
 
-        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {

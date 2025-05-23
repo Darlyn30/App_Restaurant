@@ -649,7 +649,7 @@
         },
         "runtime": {
           "UberEats.Core.Application.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -657,7 +657,7 @@
       "UberEats.Core.Domain/1.0.0": {
         "runtime": {
           "UberEats.Core.Domain.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -672,7 +672,7 @@
         },
         "runtime": {
           "UberEats.Infrastructure.Persistence.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -685,7 +685,7 @@
         },
         "runtime": {
           "UberEats.Infrastructure.Shared.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }

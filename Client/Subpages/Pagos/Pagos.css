@@ -111,3 +111,8 @@ main h2 {
 .btn-primary:hover {
     background-color: #0056b3;
 }
+
+.btn-back-to-cart:hover {
+    cursor: pointer;
+    color: greenyellow;
+}

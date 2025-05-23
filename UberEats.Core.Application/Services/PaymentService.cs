@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UberEats.Core.Application.DTO.Payment;
 using UberEats.Core.Application.Interfaces.Repositories;
 using UberEats.Core.Application.Interfaces.Services;
 using UberEats.Core.Domain.Entities;
@@ -13,41 +12,36 @@ namespace UberEats.Core.Application.Services
     public class PaymentService : IPaymentService
     {
         private readonly IPaymentRepository _paymentRepository;
-
         public PaymentService(IPaymentRepository paymentRepository)
         {
             _paymentRepository = paymentRepository;
         }
 
-        public async Task<Payment> ProccessPayment(PaymentRequestDTO dto)
+        public async Task AddPaymentMethod(PaymentMethod paymentMethod)
         {
-            string status = "Approved";
+            await _paymentRepository.AddAsync(paymentMethod);
+        }
 
-            if(dto.Method.ToLower() == "card")
-            {
-                // Simulate card payment processing
-                if (string.IsNullOrEmpty(dto.CardNumber) || string.IsNullOrEmpty(dto.CardExpiry) || string.IsNullOrEmpty(dto.CardCVC))
-                {
-                    throw new Exception("Datos de tarjeta incompletos");
-                }
+        public async Task DeletePaymentMethod(int id)
+        {
+            await _paymentRepository.DeleteAsync(id);
+        }
 
-                if(dto.CardNumber == "0000000000000000")
-                {
-                    status = "Rejected";
-                }
-            }
+        public async Task<ICollection<PaymentMethod>> GetAllPaymentMethods()
+        {
+            var result = await _paymentRepository.GetAllPaymentMethodsAsync();
+            return result;
+        }
 
-            // creamos la entidad de pago
-            var payment = new Payment
-            {
-                UserId = dto.UserId,
-                Amount = dto.Amount,
-                Method = dto.Method,
-                Status = status,
-                CardLast4Digits = dto.CardNumber != null && dto.CardNumber.Length >= 4 ? dto.CardNumber[^4..] : null
-            };
+        public async Task<PaymentMethod> GetPaymentMethodById(int id)
+        {
+            var result = await _paymentRepository.GetPaymentMethodByIdAsync(id);
+            return result;
+        }
 
-            return await _paymentRepository.AddAsync(payment);
+        public async Task UpdatePaymentMethod(PaymentMethod paymentMethod)
+        {
+            await _paymentRepository.UpdateAsync(paymentMethod);
         }
     }
 }

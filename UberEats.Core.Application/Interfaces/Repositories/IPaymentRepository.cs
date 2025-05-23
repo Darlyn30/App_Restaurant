@@ -9,7 +9,10 @@ namespace UberEats.Core.Application.Interfaces.Repositories
 {
     public interface IPaymentRepository
     {
-        Task<Payment> AddAsync(Payment payment);
-        Task<Payment> getByIdAsync(int id);
+        Task<ICollection<PaymentMethod>> GetAllPaymentMethodsAsync();
+        Task<PaymentMethod> GetPaymentMethodByIdAsync(int id);
+        Task AddAsync(PaymentMethod paymentMethod);
+        Task UpdateAsync(PaymentMethod paymentMethod);
+        Task DeleteAsync(int id);
     }
 }

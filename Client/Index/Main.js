@@ -108,7 +108,7 @@ document.getElementById('authForm').addEventListener('submit', async function(ev
         //#region signup
     } else {
         // Modo: Registro
-        await createAccount(URLS.URL_SIGN_UP);
+        await createAccount(URLS.URL_SIGN_UP, emailValue, passwordValue);
     }
 });
 
@@ -124,8 +124,10 @@ async function apiCall(url, method, body = null) {
 
     try {
         const res = await fetch(url, options);
+        
 
         const data = res.json();
+        console.log(data.message);
         if(!res.ok) throw new Error(data.message || "");
 
         return data;
@@ -165,29 +167,29 @@ async function login(url, urlCart, body){
     }
 }
 
-async function createAccount(url){
+async function createAccount(url, email, pass){
     const nameValue = document.getElementById('name').value;
     const confirmPasswordValue = document.getElementById('confirmPassword').value;
 
     const registerData = {
         name: nameValue,
-        email: emailValue,
-        password: passwordValue,
+        email: email,
+        password: pass,
     };
     console.log('Datos de registro:', registerData);
 
-    if (!nameValue || !emailValue || !passwordValue || !confirmPasswordValue) {
+    if (!nameValue || !email || !pass || !confirmPasswordValue) {
         return swal("ERROR!", "No puede haber campos vacíos", "warning");
     }
 
-    if (passwordValue !== confirmPasswordValue) {
+    if (pass !== confirmPasswordValue) {
     return swal("ERROR!", "Las contraseñas no coinciden", "warning");
     }
 
     try {
         const data = await apiCall(url, "POST", registerData); // auth = false
 
-        swal("Cuenta creada con éxito", "Redirigiendo a verificación...", "success")
+        swal(data.message, "Redirigiendo a verificación...", "success")
         .then(() => {
             window.location = "../subpages/verification/Verification.html";
         });

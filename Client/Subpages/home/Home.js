@@ -1,4 +1,6 @@
 const img404 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkjuaCHtdwkToFkspREKsD_FTNvuxsg7CFbg&s"; // cuando algo no tenga imagen o no carga
+// localStorage.removeItem("token");
+// localStorage.removeItem("account");
 
 const TOKEN = JSON.parse(localStorage.getItem("token")) || null;
 const USER = JSON.parse(localStorage.getItem("account")) || null;
@@ -130,7 +132,6 @@ async function renderFoodsByRestaurants(url, id, name){
         if(!data) return;
 
         renderFoods(data, name, res_container);
-        console.log(name);
         
     } catch(err) {
         swal({
@@ -273,7 +274,7 @@ async function apiCall(url, method, body = null) {
 
         if (!res.ok) {
             const error = new Error(data.message || "Unknown Error");
-            error.status = res.status; // ⬅️ Añadimos el status
+            error.status = res.status;
             throw error;
         }
 
