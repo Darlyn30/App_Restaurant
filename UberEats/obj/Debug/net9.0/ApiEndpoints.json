@@ -323,15 +323,15 @@
   },
   {
     "ContainingType": "WebApi.UberEats.Controllers.PaymentController",
-    "Method": "AddNewPaymentMethod",
+    "Method": "AddPaymentMethod",
     "RelativePath": "api/Payment",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "paymentMethod",
-        "Type": "UberEats.Core.Domain.Entities.PaymentMethod",
+        "Name": "paymentVm",
+        "Type": "UberEats.Core.Application.ViewModels.PaymentMethod.SavePaymentMethodViewModel",
         "IsRequired": true
       }
     ],
@@ -346,8 +346,24 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "payment",
-        "Type": "UberEats.Core.Domain.Entities.PaymentMethod",
+        "Name": "vm",
+        "Type": "UberEats.Core.Application.ViewModels.PaymentMethod.PaymentMethodViewModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.UberEats.Controllers.PaymentController",
+    "Method": "GetPaymentMethodById",
+    "RelativePath": "api/Payment/{paymentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "paymentId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -356,7 +372,7 @@
   {
     "ContainingType": "WebApi.UberEats.Controllers.PaymentController",
     "Method": "DeletePaymentMethod",
-    "RelativePath": "api/Payment",
+    "RelativePath": "api/Payment/{paymentId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -365,21 +381,10 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebApi.UberEats.Controllers.PaymentController",
-    "Method": "GetPaymentMethodById",
-    "RelativePath": "api/Payment/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
+      },
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "paymentId",
+        "Type": "",
         "IsRequired": true
       }
     ],

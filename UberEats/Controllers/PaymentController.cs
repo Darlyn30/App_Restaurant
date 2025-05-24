@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UberEats.Core.Application.Interfaces.Services;
+using UberEats.Core.Application.ViewModels.PaymentMethod;
 using UberEats.Core.Domain.Entities;
 
 namespace WebApi.UberEats.Controllers
@@ -16,39 +17,41 @@ namespace WebApi.UberEats.Controllers
         }
 
         [HttpGet]
+
         public async Task<IActionResult> GetAllPaymentMethods()
         {
             var result = await _paymentService.GetAllPaymentMethods();
             return Ok(result);
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetPaymentMethodById(int id)
+        [HttpGet("{paymentId}")]
+        public async Task<IActionResult> GetPaymentMethodById(int paymentId)
         {
-            var result = await _paymentService.GetPaymentMethodById(id);
+            var result = await _paymentService.GetPaymentMethodById(paymentId);
             return Ok(result);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddNewPaymentMethod([FromBody] PaymentMethod paymentMethod)
+        public async Task<IActionResult> AddPaymentMethod([FromBody] SavePaymentMethodViewModel paymentVm)
         {
-            await _paymentService.AddPaymentMethod(paymentMethod);
-            return Ok(new { Message = "new payment method has been added" });
+            await _paymentService.AddPaymentMethod(paymentVm);
+            return Ok(new { Message = "New method has been added" } );
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdatePaymentMethod([FromBody] PaymentMethod payment)
+        public async Task<IActionResult> UpdatePaymentMethod([FromBody] PaymentMethodViewModel vm)
         {
-            await _paymentService.UpdatePaymentMethod(payment);
-            return Ok(new { Message = "this payment method has been updated" });
-
+            await _paymentService.UpdatePaymentMethod(vm);
+            return Ok(new { Message = "This method has been updated" } );
         }
 
-        [HttpDelete]
+        [HttpDelete("{paymentId}")]
+
         public async Task<IActionResult> DeletePaymentMethod(int id)
         {
             await _paymentService.DeletePaymentMethod(id);
-            return Ok(new { Message = "this payment method has been deleted" });
+            return Ok(new { Message = "This method has been deleted" });
         }
+
     }
 }

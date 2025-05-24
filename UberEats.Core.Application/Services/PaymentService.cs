@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UberEats.Core.Application.Interfaces.Repositories;
 using UberEats.Core.Application.Interfaces.Services;
+using UberEats.Core.Application.ViewModels.PaymentMethod;
 using UberEats.Core.Domain.Entities;
 
 namespace UberEats.Core.Application.Services
@@ -17,9 +18,13 @@ namespace UberEats.Core.Application.Services
             _paymentRepository = paymentRepository;
         }
 
-        public async Task AddPaymentMethod(PaymentMethod paymentMethod)
+        public async Task AddPaymentMethod(SavePaymentMethodViewModel paymentVm)
         {
-            await _paymentRepository.AddAsync(paymentMethod);
+            PaymentMethod payment = new();
+            payment.PaymentName = paymentVm.Name;
+            payment.ImgUrl = paymentVm.ImgUrl;
+
+            await _paymentRepository.AddAsync(payment);
         }
 
         public async Task DeletePaymentMethod(int id)
@@ -27,21 +32,40 @@ namespace UberEats.Core.Application.Services
             await _paymentRepository.DeleteAsync(id);
         }
 
-        public async Task<ICollection<PaymentMethod>> GetAllPaymentMethods()
+        public async Task<ICollection<PaymentMethodViewModel>> GetAllPaymentMethods()
         {
             var result = await _paymentRepository.GetAllPaymentMethodsAsync();
-            return result;
+
+            var vmResult = result.Select(payment => new PaymentMethodViewModel
+            {
+                Id = payment.Id,
+                Name = payment.PaymentName,
+                ImgUrl = payment.ImgUrl
+            }).ToList();
+
+            return vmResult;
         }
 
-        public async Task<PaymentMethod> GetPaymentMethodById(int id)
+        public async Task<PaymentMethodViewModel> GetPaymentMethodById(int id)
         {
-            var result = await _paymentRepository.GetPaymentMethodByIdAsync(id);
-            return result;
+            var payment = await _paymentRepository.GetPaymentMethodByIdAsync(id);
+
+            PaymentMethodViewModel vm = new();
+            vm.Id = payment.Id;
+            vm.Name = payment.PaymentName;
+            vm.ImgUrl = payment.ImgUrl;
+
+            return vm;
         }
 
-        public async Task UpdatePaymentMethod(PaymentMethod paymentMethod)
+        public async Task UpdatePaymentMethod(PaymentMethodViewModel paymentVm)
         {
-            await _paymentRepository.UpdateAsync(paymentMethod);
+            PaymentMethod payment = new();
+            payment.Id = paymentVm.Id;
+            payment.PaymentName = paymentVm.Name;
+            payment.ImgUrl = paymentVm.ImgUrl;
+
+            await _paymentRepository.UpdateAsync(payment);
         }
     }
 }

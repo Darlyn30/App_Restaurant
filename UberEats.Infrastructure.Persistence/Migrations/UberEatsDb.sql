@@ -146,9 +146,12 @@ CREATE TABLE PaymentMethods
 	ImgUrl VARCHAR(MAX),
 )
 
-DROP TABLE IF EXISTS OrderItems
+SELECT * FROM PaymentMethods
 
 --Payment bills
+/*
+PENDIENTE
+
 CREATE TABLE Orders
 (
 	id INT IDENTITY(1,1) PRIMARY KEY,
@@ -157,6 +160,7 @@ CREATE TABLE Orders
 	PaymentMethodId INT,
 	Status VARCHAR(50),
 	CreatedAt DATETIME DEFAULT GETDATE(),
+	IsBilled BIT,
 	FOREIGN KEY(UserId) REFERENCES Users(Id),
 	FOREIGN KEY(PaymentMethodId) REFERENCES PaymentMethods(Id)
 )
@@ -164,14 +168,16 @@ CREATE TABLE Orders
 CREATE TABLE OrderItems
 (
 	Id INT IDENTITY(1,1) PRIMARY KEY,
-	OrderId INT, -- reference to order
-	ItemId INT, -- references to cartItems
+	OrderId INT, -- reference to Orders
+	CartId INT, -- references to Carts
 	Quantity INT,
 	Price DECIMAL(10,2),
 	FOREIGN KEY(OrderId) REFERENCES Orders(Id) ON DELETE CASCADE,
-	FOREIGN KEY(ItemId) REFERENCES CartItems(Id)
+	FOREIGN KEY(CartId) REFERENCES Carts(Id)
 )
 
+*/
+DROP TABLE IF EXISTS Orders
 --para el usuario, uno obtiene el pin, y lo mete en la tabla de cuentas no verificadas
 CREATE TRIGGER GetPIN
 ON Users

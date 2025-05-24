@@ -11,5 +11,6 @@ namespace UberEats.Core.Domain.Entities
         public int Id { get; set; }
         public string PaymentName {  get; set; }
         public string ImgUrl { get; set; }
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

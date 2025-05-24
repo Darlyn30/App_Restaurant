@@ -11,13 +11,13 @@ namespace UberEats.Core.Domain.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         
-        public string Email { get; set; }
+        public string Email { get; set; } // este valor es unique
         public string PasswordHash { get; set; }
         public string Role { get; set; }
         public string Pin {  get; set; }
         public bool IsActive { get; set; }
 
         public ICollection<Cart> Carts { get; set; } = new List<Cart>();
-        public ICollection<PaymentMethod> PaymentMethods = new List<PaymentMethod>();
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }
