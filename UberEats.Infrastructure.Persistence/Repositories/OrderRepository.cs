@@ -13,31 +13,51 @@ namespace UberEats.Infrastructure.Persistence.Repositories
     public class OrderRepository : IOrderRepository
     {
         private readonly ApplicationContext _context;
-
         public OrderRepository(ApplicationContext context)
         {
             _context = context;
         }
 
-        public async Task<Order> CreateOrderAsync(Order order)
+        public async Task CreateOrderAsync(Order order)
         {
-            _context.Orders.Add(order);
+            var orderExist = await GetOrderByIdAsync(order.Id);
+            if (orderExist != null)
+                throw new Exception("Esta orden ya existe");
+
+            await _context.Orders.AddAsync(order);
             await _context.SaveChangesAsync();
-            return order;
+        }
+
+        public async Task DeleteOrderAsync(int id)
+        {
+            var order = await GetOrderByIdAsync(id);
+            if (order == null)
+                throw new Exception("Esta orden que busca, no existe");
+
+            _context.Orders.Remove(order); //antes de salir de aqui, guardarla en el historial
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<ICollection<Order>> GetAllOrdersAync()
+        {
+            var orders = await _context.Orders.ToListAsync();
+
+            return orders;
         }
 
         public async Task<Order> GetOrderByIdAsync(int id)
         {
             var order = await _context.Orders
-                .Include(o => o.Items)
+                .Include(c => c.Cart)
+                .ThenInclude(ci => ci.CartItems)
+                .Include(u => u.User)
+                .Include(p => p.PaymentMethod)
                 .FirstOrDefaultAsync(o => o.Id == id);
 
-            return order;
-        }
+            if (order == null)
+                throw new Exception("Este pedido no existe");
 
-        public async Task SaveChangesAsync()
-        {
-            await _context.SaveChangesAsync();
+            return order;
         }
     }
 }

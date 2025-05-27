@@ -9,8 +9,9 @@ namespace UberEats.Core.Application.Interfaces.Repositories
 {
     public interface IOrderRepository
     {
-        Task<Order> CreateOrderAsync(Order order);
+        Task<ICollection<Order>> GetAllOrdersAync();
         Task<Order> GetOrderByIdAsync(int id);
-        Task SaveChangesAsync();
+        Task CreateOrderAsync(Order order);
+        Task DeleteOrderAsync(int id);
     }
 }

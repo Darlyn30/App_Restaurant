@@ -37,7 +37,7 @@ namespace WebApi.UberEats.Controllers
             if (!result)
                 return Conflict("El nombre de usuario ya existe.");
 
-            return Ok("Usuario creado exitosamente.");
+            return Ok(new { Message = "Usuario creado exitosamente." });
         }
 
         [HttpDelete("{id}")]
@@ -47,7 +47,7 @@ namespace WebApi.UberEats.Controllers
             if (!result)
                 return NotFound("Usuario no encontrado.");
 
-            return Ok("Usuario eliminado exitosamente.");
+            return Ok(new {Message = "Usuario eliminado exitosamente."});
         }
     }
 }

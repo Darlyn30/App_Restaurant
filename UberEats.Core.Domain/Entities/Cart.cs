@@ -11,7 +11,9 @@ namespace UberEats.Core.Domain.Entities
         public DateTime CreationAt { get; set; } = DateTime.Now;
 
         public User User { get; set; }
+        public Order? Order {  get; set; }
         public ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
+
 
     }
 }

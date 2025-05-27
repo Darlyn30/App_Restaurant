@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,13 +10,19 @@ namespace UberEats.Core.Domain.Entities
 {
     public class Order
     {
+        [Key]
         public int Id { get; set; }
-        public int UserId { get; set; }
-        public decimal TotalAmount { get; set; }
-        public string PaymentMethod { get; set; } // "paypal", "card"
-        public string Status { get; set; } // "Pending", "Paid", "Failed"
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        [ForeignKey("User")]
+        public int UserId {  get; set; }
+        [ForeignKey("PaymentMethod")]
+        public int PaymentId {  get; set; }
+        [ForeignKey("Cart")]
+        public int CartId {  get; set; }
+        public decimal TotalAmount {  get; set; }
+        public DateTime CreationAt { get; set; } = DateTime.UtcNow;
 
-        public List<OrderItem> Items { get; set; } = new();
+        public User? User {  get; set; }
+        public Cart? Cart {  get; set; }
+        public PaymentMethod? PaymentMethod {  get; set; }
     }
 }

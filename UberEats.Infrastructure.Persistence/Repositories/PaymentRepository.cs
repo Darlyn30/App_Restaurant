@@ -50,6 +50,9 @@ namespace UberEats.Infrastructure.Persistence.Repositories
             var method = await _context.PaymentMethods
                 .FirstOrDefaultAsync(x => x.Id == id);
 
+            if (method == null)
+                throw new Exception("No existe tal metodo");
+
             return method;
         }
 
@@ -59,8 +62,8 @@ namespace UberEats.Infrastructure.Persistence.Repositories
             if (method == null)
                 throw new Exception("this method cannot be found");
 
-            //FIXME: PROBLEM WITH {Id}
-            _context.Entry(paymentMethod).State = EntityState.Modified;
+            method.PaymentName = paymentMethod.PaymentName;
+            method.ImgUrl = paymentMethod.ImgUrl;
             await _context.SaveChangesAsync();
         }
     }

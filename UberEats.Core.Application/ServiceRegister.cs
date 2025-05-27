@@ -20,6 +20,7 @@ namespace UberEats.Core.Application
             services.AddTransient<IFoodService, FoodService>();
             services.AddTransient<ICartService, CartService>();
             services.AddTransient<IPaymentService, PaymentService>();
+            services.AddTransient<IOrderService, OrderService>();
             #endregion
         }
     }
