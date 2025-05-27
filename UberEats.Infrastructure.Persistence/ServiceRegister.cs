@@ -26,6 +26,7 @@ namespace UberEats.Infrastructure.Persistence
             services.AddTransient<ICartItemRepository, CartItemRepository>();
             services.AddTransient<IFoodRepository, FoodRepository>();
             services.AddTransient<IPaymentRepository, PaymentRepository>();
+            services.AddTransient<IOrderRepository,  OrderRepository>();
             
             #endregion
         }

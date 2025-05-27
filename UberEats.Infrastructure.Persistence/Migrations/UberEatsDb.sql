@@ -146,38 +146,35 @@ CREATE TABLE PaymentMethods
 	ImgUrl VARCHAR(MAX),
 )
 
-SELECT * FROM PaymentMethods
-
---Payment bills
-/*
-PENDIENTE
-
+--esta tabla es en lo que estara la orden activa, despues que se despache, pasara al historial
 CREATE TABLE Orders
 (
-	id INT IDENTITY(1,1) PRIMARY KEY,
-	UserId INT,
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	UserId INT, --references -> users
+	PaymentId INT, --references -> payment
+	CartId INT, --references -> carts
 	TotalAmount DECIMAL(10,2),
-	PaymentMethodId INT,
-	Status VARCHAR(50),
-	CreatedAt DATETIME DEFAULT GETDATE(),
-	IsBilled BIT,
+	CreationAt DATETIME DEFAULT GETDATE(),
 	FOREIGN KEY(UserId) REFERENCES Users(Id),
-	FOREIGN KEY(PaymentMethodId) REFERENCES PaymentMethods(Id)
+	FOREIGN KEY(PaymentId) REFERENCES PaymentMethods(Id),
+	FOREIGN KEY(CartId) REFERENCES Carts(Id),
 )
 
-CREATE TABLE OrderItems
+
+CREATE TABLE History
 (
 	Id INT IDENTITY(1,1) PRIMARY KEY,
-	OrderId INT, -- reference to Orders
-	CartId INT, -- references to Carts
-	Quantity INT,
-	Price DECIMAL(10,2),
-	FOREIGN KEY(OrderId) REFERENCES Orders(Id) ON DELETE CASCADE,
-	FOREIGN KEY(CartId) REFERENCES Carts(Id)
+	OrderId INT NOT NULL,
+	DispatchedAt DATETIME DEFAULT GETDATE(),
+	FOREIGN KEY(OrderId) REFERENCES Orders(Id) ON DELETE CASCADE
 )
+-- la logica es, mostrar el nombre del usuario que esta haciendo el pedido
+-- con que metodo decidio pagar
+-- cuando se hizo el pedido(referenciado del createdAt del cart)
+-- y cuando se despacho
+-- y cuanto fue el total de la cuenta
 
-*/
-DROP TABLE IF EXISTS Orders
+
 --para el usuario, uno obtiene el pin, y lo mete en la tabla de cuentas no verificadas
 CREATE TRIGGER GetPIN
 ON Users

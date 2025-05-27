@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|c:\\users\\darly\\videos\\programacion\\app_restaurant\\ubereats.core.application\\interfaces\\services\\iordersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|solutionrelative:ubereats.core.application\\interfaces\\services\\iordersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{832E41AE-5E92-4BB3-9053-6DC7CC939E0B}|UberEats.Core.Domain\\UberEats.Core.Domain.csproj|c:\\users\\darly\\videos\\programacion\\app_restaurant\\ubereats.core.domain\\entities\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{832E41AE-5E92-4BB3-9053-6DC7CC939E0B}|UberEats.Core.Domain\\UberEats.Core.Domain.csproj|solutionrelative:ubereats.core.domain\\entities\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{832E41AE-5E92-4BB3-9053-6DC7CC939E0B}|UberEats.Core.Domain\\UberEats.Core.Domain.csproj|c:\\users\\darly\\videos\\programacion\\app_restaurant\\ubereats.core.domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{832E41AE-5E92-4BB3-9053-6DC7CC939E0B}|UberEats.Core.Domain\\UberEats.Core.Domain.csproj|solutionrelative:ubereats.core.domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AE16167E-A9C8-458A-914F-2F873FE7F650}|UberEats.Infrastructure.Persistence\\UberEats.Infrastructure.Persistence.csproj|c:\\users\\darly\\videos\\programacion\\app_restaurant\\ubereats.infrastructure.persistence\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE16167E-A9C8-458A-914F-2F873FE7F650}|UberEats.Infrastructure.Persistence\\UberEats.Infrastructure.Persistence.csproj|solutionrelative:ubereats.infrastructure.persistence\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|c:\\users\\darly\\videos\\programacion\\app_restaurant\\ubereats.core.application\\viewmodels\\orders\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EC81EDB-34F9-4A67-8DAB-90C17803A0AC}|UberEats.Core.Application\\UberEats.Core.Application.csproj|solutionrelative:ubereats.core.application\\viewmodels\\orders\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|c:\\users\\darly\\videos\\programacion\\app_restaurant\\ubereats\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB4A67C4-F16C-48A9-A7E2-C81C4FAF1152}|UberEats\\WebApi.UberEats.csproj|solutionrelative:ubereats\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\darly\\AppData\\Roaming\\Microsoft\\UserSecrets\\a9235ff6-11f2-41a6-8328-a15aa8ed682e\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
@@ -36,83 +24,44 @@
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "OrderItem.cs",
-              "DocumentMoniker": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant\\UberEats.Core.Domain\\Entities\\OrderItem.cs",
-              "RelativeDocumentMoniker": "UberEats.Core.Domain\\Entities\\OrderItem.cs",
-              "ToolTip": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant\\UberEats.Core.Domain\\Entities\\OrderItem.cs",
-              "RelativeToolTip": "UberEats.Core.Domain\\Entities\\OrderItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T16:33:46.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "OrderViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant\\UberEats.Core.Application\\ViewModels\\Orders\\OrderViewModel.cs",
-              "RelativeDocumentMoniker": "UberEats.Core.Application\\ViewModels\\Orders\\OrderViewModel.cs",
-              "ToolTip": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant\\UberEats.Core.Application\\ViewModels\\Orders\\OrderViewModel.cs",
-              "RelativeToolTip": "UberEats.Core.Application\\ViewModels\\Orders\\OrderViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T16:14:12.44Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IOrdersService.cs",
-              "DocumentMoniker": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant\\UberEats.Core.Application\\Interfaces\\Services\\IOrdersService.cs",
-              "RelativeDocumentMoniker": "UberEats.Core.Application\\Interfaces\\Services\\IOrdersService.cs",
-              "ToolTip": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant\\UberEats.Core.Application\\Interfaces\\Services\\IOrdersService.cs*",
-              "RelativeToolTip": "UberEats.Core.Application\\Interfaces\\Services\\IOrdersService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T16:07:45.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrderRepository.cs",
-              "DocumentMoniker": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant\\UberEats.Infrastructure.Persistence\\Repositories\\OrderRepository.cs",
-              "RelativeDocumentMoniker": "UberEats.Infrastructure.Persistence\\Repositories\\OrderRepository.cs",
-              "ToolTip": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant\\UberEats.Infrastructure.Persistence\\Repositories\\OrderRepository.cs",
-              "RelativeToolTip": "UberEats.Infrastructure.Persistence\\Repositories\\OrderRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T15:52:57.949Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant\\UberEats.Core.Domain\\Entities\\Order.cs",
-              "RelativeDocumentMoniker": "UberEats.Core.Domain\\Entities\\Order.cs",
-              "ToolTip": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant\\UberEats.Core.Domain\\Entities\\Order.cs",
-              "RelativeToolTip": "UberEats.Core.Domain\\Entities\\Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T15:52:30.842Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant\\UberEats\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "UberEats\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant\\UberEats\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "UberEats\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAiwCIAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T01:00:50.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant\\UberEats.Infrastructure.Persistence\\Repositories\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "UberEats.Infrastructure.Persistence\\Repositories\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\darly\\Videos\\programacion\\App_Restaurant\\UberEats.Infrastructure.Persistence\\Repositories\\OrderRepository.cs",
+              "RelativeToolTip": "UberEats.Infrastructure.Persistence\\Repositories\\OrderRepository.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAUwBAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T00:57:27.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "secrets.json",
               "DocumentMoniker": "C:\\Users\\darly\\AppData\\Roaming\\Microsoft\\UserSecrets\\a9235ff6-11f2-41a6-8328-a15aa8ed682e\\secrets.json",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\a9235ff6-11f2-41a6-8328-a15aa8ed682e\\secrets.json",
               "ToolTip": "C:\\Users\\darly\\AppData\\Roaming\\Microsoft\\UserSecrets\\a9235ff6-11f2-41a6-8328-a15aa8ed682e\\secrets.json",
               "RelativeToolTip": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\a9235ff6-11f2-41a6-8328-a15aa8ed682e\\secrets.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-05-21T22:03:59.632Z"
             }
