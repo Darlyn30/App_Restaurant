@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Seguimiento de Pedido</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .progress-bar {
+      height: 10px;
+      width: 100%;
+      background-color: #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      transition: background-color 0.5s ease;
+    }
+
+    .step-label {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .status {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .card {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+
+    .completed {
+      background-color: #4caf50 !important;
+    }
+
+    .active {
+      background-color: #ff9800 !important;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="step-label">1. Preparando</div>
+  <div class="progress-bar" id="bar1"></div>
+
+  <div class="step-label">2. En camino</div>
+  <div class="progress-bar" id="bar2"></div>
+
+  <div class="step-label">3. Entregado</div>
+  <div class="progress-bar" id="bar3"></div>
+
+  <div class="status" id="statusText">⌛ Esperando confirmación...</div>
+
+  <div class="card">
+    <h3>Pedido #1234</h3>
+    <p>2x Pizza Napolitana</p>
+    <p>1x Jugo Natural</p>
+    <p>Total: $18.50</p>
+  </div>
+</div>
+
+<script>
+  const statusText = document.getElementById("statusText");
+  const bar1 = document.getElementById("bar1");
+  const bar2 = document.getElementById("bar2");
+  const bar3 = document.getElementById("bar3");
+
+  setTimeout(() => {
+    bar1.classList.add("completed");
+    statusText.textContent = "🍳 Preparando pedido...";
+  }, 1000);
+
+  setTimeout(() => {
+    bar2.classList.add("completed");
+    statusText.textContent = "🚚 Pedido en camino...";
+  }, 4000);
+
+  setTimeout(() => {
+    bar3.classList.add("completed");
+    statusText.textContent = "✅ Pedido entregado";
+
+    Swal.fire({
+      icon: 'success',
+      title: '¡Entregado!',
+      text: 'Tu pedido ha sido entregado con éxito.'
+    });
+  }, 7000);
+</script>
+
+</body>
+</html>

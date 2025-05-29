@@ -14,13 +14,20 @@
         </nav>
     </header>
 
+    <div class="payment-container" style="display: none;">
+        <h2>Procesando Pago...</h2>
+        <div class="spinner" id="spinner"></div>
+        <div class="status-text" id="status">Estamos verificando tu pago</div>
+<!--     
+        <div class="paid-text" id="paidText">✅ ¡Pago completado!</div> -->
+    </div>
+
     <section id="confirmation">
         <h2>Confirmación de Pago</h2>
 
         <div class="selected-payment">
             <img id="payment-icon" alt="Método de Pago" class="payment-icon"/>
             <p>Has seleccionado: <span id="selected-method"></span></p>
-            <p>Producto: <span id="item-name"></span></p>
             <p>Monto a pagar: $<span id="amount"></span></p>
         </div>
 
@@ -53,8 +60,6 @@
 
                     <select id="card-expiry-year" required>
                         <option value="" disabled selected>Año</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
                         <option value="2026">2026</option>
                         <option value="2027">2027</option>
                         <option value="2028">2028</option>
@@ -64,19 +69,19 @@
                 </div>
 
                 <label for="card-cvc">CVC</label>
-                <input type="password" id="card-cvc" maxlength="3" required placeholder="123" />
+                <input type="password" id="card-cvc" maxlength="3" required placeholder="123" oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
 
                 <button class="btn-primary">Pagar</button>
-        </form>
+            </form>
         </div>
 
         <div class="action-buttons">
             <button id="confirm-button" type="button" class="btn-primary">Confirmar y Pagar</button>
-            <button class="btn-secondary">Cambiar Método de Pago</button>
+            <button class="btn-secondary" id="btn-back">Cambiar Método de Pago</button>
         </div>
     </section>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./Confirmation.js"></script>
 </body>
 </html>

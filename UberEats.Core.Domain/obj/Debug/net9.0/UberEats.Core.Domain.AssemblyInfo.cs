@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UberEats.Core.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f1479f98d400751f67afa82663f774457c2bebe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a582f3f08553d491d2419a081bec6f8f808c150a")]
 [assembly: System.Reflection.AssemblyProductAttribute("UberEats.Core.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UberEats.Core.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

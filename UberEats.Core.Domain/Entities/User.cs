@@ -18,6 +18,6 @@ namespace UberEats.Core.Domain.Entities
         public bool IsActive { get; set; }
 
         public ICollection<Cart> Carts { get; set; } = new List<Cart>();
-        public ICollection<Order> Orders { get; set; } = new List<Order>();
+        public ICollection<History> History { get; set; } = new List<History>();
     }
 }

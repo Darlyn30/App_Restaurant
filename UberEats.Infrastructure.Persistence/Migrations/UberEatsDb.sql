@@ -146,34 +146,16 @@ CREATE TABLE PaymentMethods
 	ImgUrl VARCHAR(MAX),
 )
 
---esta tabla es en lo que estara la orden activa, despues que se despache, pasara al historial
-CREATE TABLE Orders
-(
-	Id INT IDENTITY(1,1) PRIMARY KEY,
-	UserId INT, --references -> users
-	PaymentId INT, --references -> payment
-	CartId INT, --references -> carts
-	TotalAmount DECIMAL(10,2),
-	CreationAt DATETIME DEFAULT GETDATE(),
-	FOREIGN KEY(UserId) REFERENCES Users(Id),
-	FOREIGN KEY(PaymentId) REFERENCES PaymentMethods(Id),
-	FOREIGN KEY(CartId) REFERENCES Carts(Id),
-)
-
-
 CREATE TABLE History
 (
 	Id INT IDENTITY(1,1) PRIMARY KEY,
-	OrderId INT NOT NULL,
-	DispatchedAt DATETIME DEFAULT GETDATE(),
-	FOREIGN KEY(OrderId) REFERENCES Orders(Id) ON DELETE CASCADE
+	PaymentMethodId INT,
+	UserId INT,
+	CartId INT,
+	FOREIGN KEY(PaymentMethodId) REFERENCES PaymentMethods(Id),
+	FOREIGN KEY(UserId) REFERENCES Users(Id),
+	FOREIGN KEY (CartId) REFERENCES Carts(Id)
 )
--- la logica es, mostrar el nombre del usuario que esta haciendo el pedido
--- con que metodo decidio pagar
--- cuando se hizo el pedido(referenciado del createdAt del cart)
--- y cuando se despacho
--- y cuanto fue el total de la cuenta
-
 
 --para el usuario, uno obtiene el pin, y lo mete en la tabla de cuentas no verificadas
 CREATE TRIGGER GetPIN

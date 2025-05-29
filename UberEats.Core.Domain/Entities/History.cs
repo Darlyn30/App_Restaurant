@@ -10,8 +10,11 @@ namespace UberEats.Core.Domain.Entities
     public class History
     {
         public int Id { get; set; }
-        [ForeignKey("Order")]
-        public int OrderId {  get; set; }
-        public DateTime DispatchedAt {  get; set; }
+        public int PaymentMethodId {  get; set; }
+        public int UserId {  get; set; }
+        public int CartId {  get; set; }
+        public PaymentMethod? PaymentMethod {  get; set; }
+        public User? User {  get; set; }
+        public Cart? Cart { get; set; }
     }
 }

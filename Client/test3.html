@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulación de Pago</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .payment-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 350px;
+      text-align: center;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #ddd;
+      border-top: 6px solid #2196F3;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .status-text {
+      font-size: 18px;
+      font-weight: 500;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .paid-text {
+      color: #4caf50;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="payment-container">
+    <h2>Procesando Pago...</h2>
+    <div class="spinner" id="spinner"></div>
+    <div class="status-text" id="status">Estamos verificando tu pago</div>
+
+    <div class="paid-text" id="paidText">✅ ¡Pago completado!</div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('spinner').style.display = 'none';
+      document.getElementById('status').style.display = 'none';
+      document.getElementById('paidText').style.display = 'block';
+
+      Swal.fire({
+        icon: 'success',
+        title: '¡Pago exitoso!',
+        text: 'Gracias por tu compra. Tu pedido será procesado en breve.'
+      });
+    }, 4000);
+  </script>
+
+</body>
+</html>
