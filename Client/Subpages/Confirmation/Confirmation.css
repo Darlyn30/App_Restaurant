@@ -10,6 +10,12 @@ body {
     background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
 }
 
 header {
@@ -130,4 +136,59 @@ button {
     flex-direction: column;
     gap: 10px;
     align-items: center;
+}
+
+
+.payment-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.payment-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    padding: 20px 40px;
+    border-radius: 15px;
+    z-index: 9999;
+    display: none; /* Visible solo cuando se procesa */
+    text-align: center;
+}
+
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #ddd;
+    border-top: 6px solid #2196F3;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.status-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+    margin-top: 10px;
+}
+
+.paid-text {
+    color: #4caf50;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    display: none;
 }

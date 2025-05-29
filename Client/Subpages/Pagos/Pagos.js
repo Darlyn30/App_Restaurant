@@ -47,8 +47,8 @@ function GoToConfirmationPage(){
     }
 
     console.log(selected);
-    console.log(`pagaras con el metodo: ${selected.value}`);
-    // sessionStorage.setItem("selectedPaymentMethod", selected.value);
+    console.log(`pagaras con el metodo: ${selected.value}`); // esto me devuelve el id con el metodo de pago seleccionado
+    sessionStorage.setItem("selectedPaymentMethod", selected.value);
     //mas que el Id le pasare un objeto con la cuenta(monto) y el metodo de pago
-    //window.location.href = "../Confirmation/Confirmation.html";
+    window.location.href = "../Confirmation/Confirmation.html";
 }

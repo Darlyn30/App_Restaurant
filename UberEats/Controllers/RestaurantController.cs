@@ -16,7 +16,7 @@ namespace WebApi.UberEats.Controllers
         {
             _restaurantService = restaurantService;
         }
-        [Authorize]
+
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -24,7 +24,6 @@ namespace WebApi.UberEats.Controllers
             return Ok(restaurants);
         }
 
-        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {

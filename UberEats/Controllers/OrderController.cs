@@ -32,7 +32,7 @@ namespace WebApi.UberEats.Controllers
             }
             catch(Exception ex)
             {
-                return BadRequest(new { Message = ex.Message });
+                return NotFound(new { Message = ex.Message });
             }
 
         }
